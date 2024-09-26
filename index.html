@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <script>
+        var listaDeNomes = ["maylon", "arthur", "ryan", "raphel", "maria", "gabriel", "maycon", "dalton", "patrick"];
+
+        function cadastrarUsuario() {
+            var nome = prompt("Digite o nome do aluno:");
+
+            if (listaDeNomes.includes(nome)) {
+                alert(nome + " já está cadastrado.");
+            } else {
+                listaDeNomes.push(nome);
+                alert(nome + " foi cadastrado com sucesso!");
+            }
+        }
+
+        function listarAlunos() {
+            var alunos = listaDeNomes.join(", ");
+            alert("Alunos cadastrados: " + alunos);
+        }
+
+        function enviarParaSegundaTela() {
+            listarAlunos();
+            // Você pode redirecionar para uma nova página se necessário
+            window.location.href = "segundaTela.html";
+        }
+    </script>
+</head>
+<body>
+    <h1>Cadastro de Alunos</h1>
+    <button onclick="cadastrarUsuario()">Cadastrar Aluno</button>
+    <button onclick="enviarParaSegundaTela()">Listar Alunos e Ir para Segunda Tela</button>
+</body>
+</html>
